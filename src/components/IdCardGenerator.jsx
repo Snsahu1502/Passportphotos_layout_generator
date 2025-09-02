@@ -217,10 +217,10 @@ const IdCardGenerator = () => {
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 flex items-center justify-center space-x-2">
             <span>🆔</span>
-            <span>ID Card Generator - Border Cropped</span>
+            <span>ID Card Generator</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Creates perfectly cropped cards with no extra white space
+            Creates perfectly passport photo with Name and Date
           </p>
         </div>
 
@@ -349,7 +349,7 @@ const IdCardGenerator = () => {
           <div className="space-y-4">
             <div className="text-center">
               <h3 className="text-base font-semibold text-gray-700 dark:text-gray-200 mb-3">
-                Cropped Preview (Border Only)
+                Cropped Preview
               </h3>
 
               {generatedIdCard ? (
@@ -387,7 +387,7 @@ const IdCardGenerator = () => {
                 <div className="bg-gray-100 dark:bg-gray-700 rounded-xl p-6 text-center">
                   <div className="text-4xl mb-3">✂️</div>
                   <h4 className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3">
-                    Perfect Crop Preview
+                    Image Preview
                   </h4>
 
                   <div className="inline-block border-4 border-gray-800 bg-white p-3 rounded">
@@ -401,12 +401,6 @@ const IdCardGenerator = () => {
                     <div className="h-2 bg-gray-800 rounded mb-1"></div>
                     <div className="h-1 bg-gray-600 rounded"></div>
                   </div>
-
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-4">
-                    Output cropped exactly to border edges
-                    <br />
-                    No extra white space • Perfect for sharing
-                  </p>
                 </div>
               )}
             </div>
