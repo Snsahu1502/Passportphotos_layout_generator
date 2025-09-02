@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import PassportPhotoCreator from "./components/PassportPhotoCreator";
 import BackgroundRemovalTool from "./components/BackgroundRemovalTool";
+import IdCardGenerator from "./components/IdCardGenerator";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [activeModule, setActiveModule] = useState('passport'); // 'passport' or 'background'
+  const [activeModule, setActiveModule] = useState('passport'); // 'passport', 'background', or 'idcard'
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const themeClass = isDarkMode ? 'dark' : '';
 
   return (
     <div className={`min-h-screen transition-all duration-500 ${themeClass}`}>
-      {/* Animated Background */}
+      {/* Background Effects */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-purple-900"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -49,7 +50,7 @@ const App = () => {
               <div className="flex space-x-2">
                 <button
                   onClick={() => setActiveModule('passport')}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 text-sm ${
                     activeModule === 'passport'
                       ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg transform scale-105'
                       : 'text-gray-600 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20'
@@ -61,7 +62,7 @@ const App = () => {
                 
                 <button
                   onClick={() => setActiveModule('background')}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 ${
+                  className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 text-sm ${
                     activeModule === 'background'
                       ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg transform scale-105'
                       : 'text-gray-600 dark:text-gray-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20'
@@ -69,6 +70,18 @@ const App = () => {
                 >
                   <span>✂️</span>
                   <span>Remove Background</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveModule('idcard')}
+                  className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 text-sm ${
+                    activeModule === 'idcard'
+                      ? 'bg-gradient-to-r from-green-500 to-teal-500 text-white shadow-lg transform scale-105'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-green-500 hover:bg-green-50 dark:hover:bg-green-900/20'
+                  }`}
+                >
+                  <span>🆔</span>
+                  <span>ID Card Generator</span>
                 </button>
               </div>
             </div>
@@ -78,10 +91,11 @@ const App = () => {
           <div className="transition-all duration-500">
             {activeModule === 'passport' && <PassportPhotoCreator />}
             {activeModule === 'background' && <BackgroundRemovalTool />}
+            {activeModule === 'idcard' && <IdCardGenerator />}
           </div>
-
-          <Footer />
         </div>
+
+        <Footer />
       </div>
     </div>
   );
