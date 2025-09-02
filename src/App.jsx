@@ -60,7 +60,7 @@ const App = () => {
                   <span>Passport Photos</span>
                 </button>
                 
-                <button
+                {/* <button
                   onClick={() => setActiveModule('background')}
                   className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 text-sm ${
                     activeModule === 'background'
@@ -70,7 +70,7 @@ const App = () => {
                 >
                   <span>✂️</span>
                   <span>Remove Background</span>
-                </button>
+                </button> */}
 
                 <button
                   onClick={() => setActiveModule('idcard')}
